@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 	<!-- set the encoding of your site -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- set the page title -->
-	<title>Albert Lipaev Portfolio</title>
+	<title>Альберт Липаев — портфолио</title>
 	<!-- inlcude google poppins font cdn link -->
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	<!-- include the site bootstrap stylesheet -->
@@ -20,6 +20,38 @@
 		.project-sample {
 			width: 370px;
 			height: 260px;
+		}
+		/* language switch button — matches existing nav-link styling */
+		.pgMainNavigation .nav-item.langToggleWrap {
+			display: flex;
+			align-items: center;
+		}
+		.pgMainNavigation .langToggle {
+			cursor: pointer;
+			min-width: 2.4rem;
+			padding: 0.15rem 0.55rem !important;
+			margin-left: 0.6rem;
+			border: 1px solid #20ce65;
+			border-radius: 4px;
+			text-align: center;
+			line-height: 1.4;
+			letter-spacing: 0.05em;
+			color: #20ce65 !important;
+			transition: background-color 0.2s ease, color 0.2s ease;
+		}
+		.pgMainNavigation .langToggle:after { display: none !important; }
+		.pgMainNavigation .langToggle:hover {
+			background-color: #20ce65;
+			color: #fff !important;
+		}
+		@media (max-width: 767.98px) {
+			.pgMainNavigation .nav-item.langToggleWrap {
+				justify-content: center;
+				margin-top: 0.5rem;
+			}
+			.pgMainNavigation .langToggle {
+				margin-left: 0;
+			}
 		}
 	</style>
 </head>
@@ -47,33 +79,37 @@
 									<!-- pgNavOpener -->
 									<button class="navbar-toggler pgNavOpener position-relative p-0 border-0 rounded-0 mt-2" type="button" data-toggle="collapse" data-target="#pageMainNavCollapse" aria-controls="pageMainNavCollapse" aria-expanded="false" aria-label="Toggle navigation">
 										<!-- icnBar -->
-										<span class="icnBar position-absolute"><span class="sr-only">menu</span></span>
+										<span class="icnBar position-absolute"><span class="sr-only" data-i18n="aria.menu">menu</span></span>
 									</button>
 									<!-- pageMainNavCollapse -->
 									<div class="collapse navbar-collapse justify-content-md-end pageMainNavCollapse" id="pageMainNavCollapse">
 										<!-- pgMainNavigation -->
 										<ul class="navbar-nav text-uppercase pgMainNavigation font-weight-normal">
 											<li class="nav-item">
-												<a class="nav-link smooth" href="#pageWrapper">Home</a>
+												<a class="nav-link smooth" href="#pageWrapper" data-i18n="nav.home">Home</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link smooth" href="#about">About</a>
+												<a class="nav-link smooth" href="#about" data-i18n="nav.about">About</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link smooth" href="#services">Services</a>
+												<a class="nav-link smooth" href="#services" data-i18n="nav.services">Services</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link smooth" href="#works">Work</a>
+												<a class="nav-link smooth" href="#works" data-i18n="nav.work">Work</a>
 											</li>
 											<!-- <li class="nav-item">
 												<a class="nav-link smooth" href="#journey">Journey</a>
 											</li> -->
 											<li class="nav-item">
-												<a class="nav-link smooth" href="#blog">Blog</a>
+												<a class="nav-link smooth" href="#blog" data-i18n="nav.blog">Blog</a>
 											</li>
 											<!-- <li class="nav-item">
 												<a class="nav-link smooth" href="#contact">Contact</a>
 											</li> -->
+											<!-- language toggle (RU/EN) -->
+											<li class="nav-item langToggleWrap">
+												<a class="nav-link langToggle" href="javascript:void(0);" role="button" aria-label="Switch to English">EN</a>
+											</li>
 										</ul>
 									</div>
 								</nav>
@@ -97,14 +133,14 @@
 									<div class="position-relative ibCaptionHolder">
 										<h1 class="text-capitalize mb-3 mb-md-5">
 											<!-- headingTitle -->
-											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 mb-md-5 wow fadeInLeft" data-wow-delay="2s">Professional Software Engineer</strong>
+											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 mb-md-5 wow fadeInLeft" data-wow-delay="2s" data-i18n="intro.role">Professional Software Engineer</strong>
 											<span class="d-block wow fadeInLeft" data-wow-delay="2.5s">Albert <span class="text-white">Lipaev</span></span>
 										</h1>
-										<p class="wow fadeInLeft" data-wow-delay="2.8s">I am a award-winning full-stack developer from West Palm Beach, FL. Check out my blogs and Projects.</p>
+										<p class="wow fadeInLeft" data-wow-delay="2.8s" data-i18n="intro.tagline">I am a award-winning full-stack developer from West Palm Beach, FL. Check out my blogs and Projects.</p>
 										<!-- ibBtnsWrap -->
 										<div class="ibBtnsWrap d-flex flex-wrap mx-n1 mx-lg-n3 pt-4 pt-lg-9">
 											<!-- <a href="javascript:void(0);" class="btn btnWhite position-relative wow bounceIn text-uppercase mx-1 mx-lg-3 btnMinSmall" data-hover="Biography" data-wow-delay="3s"><span class="d-block btnText">Biography</span></a> -->
-											<a href="https://www.upwork.com/freelancers/~01701cca25441581a7?mp_source=share" data-wow-delay="3.3s" class="btn btnTheme position-relative btnMinSmall wow  bounceIn mx-1 mx-lg-3" data-hover="Hire Me"><span class="d-block btnText">Hire Me</span></a>
+											<a href="https://www.upwork.com/freelancers/~01701cca25441581a7?mp_source=share" data-wow-delay="3.3s" class="btn btnTheme position-relative btnMinSmall wow  bounceIn mx-1 mx-lg-3" data-hover="Hire Me" data-i18n-attr="data-hover:btn.hireMe"><span class="d-block btnText" data-i18n="btn.hireMe">Hire Me</span></a>
 										</div>
 									</div>
 								</div>
@@ -155,12 +191,12 @@
 									<header class="mb-lg-5">
 										<h2 class="text-capitalize mb-4 mb-lg-7">
 											<!-- headingTitle -->
-											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight">About Me</strong>
-											<span class="d-block wow fadeInRight" data-wow-delay="0.7s">Senior software engineer</span>
+											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight" data-i18n="about.title">About Me</strong>
+											<span class="d-block wow fadeInRight" data-wow-delay="0.7s" data-i18n="about.subtitle">Senior software engineer</span>
 										</h2>
-										<h3 class="text-white fwMedium wow fadeInRight" data-wow-delay="0.9s">Software developer focused on scalable, enterprise-level application development, with 10+ Years of Experience</h3>
+										<h3 class="text-white fwMedium wow fadeInRight" data-wow-delay="0.9s" data-i18n="about.heading">Software developer focused on scalable, enterprise-level application development, with 10+ Years of Experience</h3>
 									</header>
-									<p class="wow fadeInRight" data-wow-delay="0.7s">
+									<p class="wow fadeInRight" data-wow-delay="0.7s" data-i18n="about.body">
 										With several years of experience in software engineering, I am an expert in web application development. Over the last few years, my focus has been on building scalable and fault-tolerant systems using Python/Django, C++/C#, Java, Node.js, PHP and AWS. I am an effective collaborator and am performant both as a sole developer as well as in a team.
 									</p>
 									<!-- btn -->
@@ -177,7 +213,7 @@
 													<!-- abflcTag -->
 													<strong class="abflcTag position-absolute fwMedium text-white rounded-circle d-flex align-items-center justify-content-center wow bounceIn" data-wow-delay="1s">25+</strong>
 													<!-- abflcHeading -->
-													<h4 class="abflcHeading text-white fwMedium">Happy Clients</h4>
+													<h4 class="abflcHeading text-white fwMedium" data-i18n="about.stat1">Happy Clients</h4>
 												</div>
 											</li>
 											<li>
@@ -186,7 +222,7 @@
 													<!-- abflcTag -->
 													<strong class="abflcTag position-absolute fwMedium text-white rounded-circle d-flex align-items-center justify-content-center wow bounceIn" data-wow-delay="1.3s">30+</strong>
 													<!-- abflcHeading -->
-													<h4 class="abflcHeading text-white fwMedium">Projects Done</h4>
+													<h4 class="abflcHeading text-white fwMedium" data-i18n="about.stat2">Projects Done</h4>
 												</div>
 											</li>
 											<li>
@@ -195,7 +231,7 @@
 													<!-- abflcTag -->
 													<strong class="abflcTag position-absolute fwMedium text-white rounded-circle d-flex align-items-center justify-content-center wow bounceIn" data-wow-delay="1.7s">2+</strong>
 													<!-- abflcHeading -->
-													<h4 class="abflcHeading text-white fwMedium">Projects In Progresss</h4>
+													<h4 class="abflcHeading text-white fwMedium" data-i18n="about.stat3">Projects In Progresss</h4>
 												</div>
 											</li>
 											<li>
@@ -204,7 +240,7 @@
 													<!-- abflcTag -->
 													<strong class="abflcTag position-absolute fwMedium text-white rounded-circle d-flex align-items-center justify-content-center wow bounceIn" data-wow-delay="2s">2000+</strong>
 													<!-- abflcHeading -->
-													<h4 class="abflcHeading text-white fwMedium">Working Hours</h4>
+													<h4 class="abflcHeading text-white fwMedium" data-i18n="about.stat4">Working Hours</h4>
 												</div>
 											</li>
 										</ul>
@@ -227,8 +263,8 @@
 							<header class="text-center mb-14 mb-lg-20">
 								<h2 class="text-capitalize mb-4 mb-lg-7">
 									<!-- headingTitle -->
-									<strong class="fwMedium d-inline-block align-top text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight">My Services</strong>
-									<span class="d-block wow fadeInUp" data-wow-delay="0.5s">What Can I Do Best?</span>
+									<strong class="fwMedium d-inline-block align-top text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight" data-i18n="services.title">My Services</strong>
+									<span class="d-block wow fadeInUp" data-wow-delay="0.5s" data-i18n="services.subtitle">What Can I Do Best?</span>
 								</h2>
 							</header>
 							<div class="row justify-content-center">
@@ -242,8 +278,8 @@
 											</span>
 										</span>
 										<!-- hasLineBottom -->
-										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5">Fast</h3>
-										<p>Fast load times and lag free interaction, my highest priority</p>
+										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5" data-i18n="service1.title">Fast</h3>
+										<p data-i18n="service1.body">Fast load times and lag free interaction, my highest priority</p>
 									</article>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
@@ -256,8 +292,8 @@
 											</span>
 										</span>
 										<!-- hasLineBottom -->
-										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5">Responsive</h3>
-										<p>My layouts will work on any device including Mobile, Tablet, Desktop</p>
+										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5" data-i18n="service2.title">Responsive</h3>
+										<p data-i18n="service2.body">My layouts will work on any device including Mobile, Tablet, Desktop</p>
 									</article>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
@@ -270,8 +306,8 @@
 											</span>
 										</span>
 										<!-- hasLineBottom -->
-										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5">Intuitive</h3>
-										<p>Strong preference for easy to use, intuitive UX/UI</p>
+										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5" data-i18n="service3.title">Intuitive</h3>
+										<p data-i18n="service3.body">Strong preference for easy to use, intuitive UX/UI</p>
 									</article>
 								</div>
 								<div class="col-12 col-md-6 col-lg-4 col-xl-3 d-flex">
@@ -284,8 +320,8 @@
 											</span>
 										</span>
 										<!-- hasLineBottom -->
-										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5">Dynamic</h3>
-										<p>Websites don't have to be static, I love making pages come to life</p>
+										<h3 class="h5 hasLineBottom fwMedium text-capitalize text-white position-relative pb-4 mb-5" data-i18n="service4.title">Dynamic</h3>
+										<p data-i18n="service4.body">Websites don't have to be static, I love making pages come to life</p>
 									</article>
 								</div>
 							</div>
@@ -300,14 +336,14 @@
 								<header class="mb-5">
 									<h2 class="text-capitalize mb-6">
 										<!-- headingTitle -->
-										<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-4 wow fadeInLeft">Expertise</strong>
-										<span class="d-block wow fadeInLeft" data-wow-delay="0.5s">My Skills &amp; Tools</span>
+										<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-4 wow fadeInLeft" data-i18n="expertise.title">Expertise</strong>
+										<span class="d-block wow fadeInLeft" data-wow-delay="0.5s" data-i18n="expertise.subtitle">My Skills &amp; Tools</span>
 									</h2>
-									<h3 class="text-white fwMedium wow fadeInLeft" data-wow-delay="0.9s">Every Day is a New Challenge</h3>
+									<h3 class="text-white fwMedium wow fadeInLeft" data-wow-delay="0.9s" data-i18n="expertise.heading">Every Day is a New Challenge</h3>
 								</header>
-								<p class="wow fadeInLeft" data-wow-delay="1.3s">My top skills are Python, C++/C#, Java, ASP.NET and PHP.</p>
+								<p class="wow fadeInLeft" data-wow-delay="1.3s" data-i18n="expertise.body">My top skills are Python, C++/C#, Java, ASP.NET and PHP.</p>
 								<!-- btn -->
-								<a href="javascript:void(0);" class="btn btnThemeOutline position-relative btnMinSmall mt-5 wow bounceIn" data-wow-delay="1.7s" data-hover="Hire Me"><span class="d-block btnText">Hire Me</span></a>
+								<a href="javascript:void(0);" class="btn btnThemeOutline position-relative btnMinSmall mt-5 wow bounceIn" data-wow-delay="1.7s" data-hover="Hire Me" data-i18n-attr="data-hover:btn.hireMe"><span class="d-block btnText" data-i18n="btn.hireMe">Hire Me</span></a>
 							</div>
 							<div class="col-12 col-md-7">
 								<!-- extraWrap -->
@@ -412,7 +448,7 @@
 													<circle class="cr1" r="47.5" cx="50" cy="50" fill="none" stroke="#19232b" stroke-width="5" />
 													<circle class="cr2" r="47.5" cx="50" cy="50" fill="none" stroke="#d593ff" stroke-width="5" stroke-dasharray="180 43" />
 												</svg>
-												<strong class="fwMedium titleOut d-block text-uppercase">Frontend</strong>
+												<strong class="fwMedium titleOut d-block text-uppercase" data-i18n="pie.frontend">Frontend</strong>
 											</div>
 										</li>
 										<li class="wow" data-wow-delay="1s">
@@ -423,7 +459,7 @@
 													<circle class="cr1" r="47.5" cx="50" cy="50" fill="none" stroke="#19232b" stroke-width="5" />
 													<circle class="cr2" r="47.5" cx="50" cy="50" fill="none" stroke="#35fc00" stroke-width="5" stroke-dasharray="170 53" />
 												</svg>
-												<strong class="fwMedium titleOut d-block text-uppercase">Backend</strong>
+												<strong class="fwMedium titleOut d-block text-uppercase" data-i18n="pie.backend">Backend</strong>
 											</div>
 										</li>
 										<li class="wow" data-wow-delay="1.5s">
@@ -434,7 +470,7 @@
 													<circle class="cr1" r="47.5" cx="50" cy="50" fill="none" stroke="#19232b" stroke-width="5" />
 													<circle class="cr2" r="47.5" cx="50" cy="50" fill="none" stroke="#ffa726" stroke-width="5" stroke-dasharray="150 72" />
 												</svg>
-												<strong class="fwMedium titleOut d-block text-uppercase">DevOps</strong>
+												<strong class="fwMedium titleOut d-block text-uppercase" data-i18n="pie.devops">DevOps</strong>
 											</div>
 										</li>
 										<li class="wow" data-wow-delay="2s">
@@ -445,7 +481,7 @@
 													<circle class="cr1" r="47.5" cx="50" cy="50" fill="none" stroke="#19232b" stroke-width="5" />
 													<circle class="cr2" r="47.5" cx="50" cy="50" fill="none" stroke="#00a0d2" stroke-width="5" stroke-dasharray="160 63" />
 												</svg>
-												<strong class="fwMedium titleOut d-block text-uppercase">Ui / UX</strong>
+												<strong class="fwMedium titleOut d-block text-uppercase" data-i18n="pie.uiux">Ui / UX</strong>
 											</div>
 										</li>
 									</ul>
@@ -464,15 +500,15 @@
 									<div class="col-12 col-lg-5">
 										<h2 class="text-capitalize">
 											<!-- headingTitle -->
-											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight">Portfolio</strong>
-											<span class="d-block wow fadeInUp" data-wow-delay="0.5s">My Creative Work</span>
+											<strong class="fwMedium d-block text-white position-relative headingTitle text-capitalize mb-3 wow fadeInRight" data-i18n="portfolio.title">Portfolio</strong>
+											<span class="d-block wow fadeInUp" data-wow-delay="0.5s" data-i18n="portfolio.subtitle">My Creative Work</span>
 										</h2>
 									</div>
 									<div class="col-12 col-lg-7">
 										<!-- filtersList -->
 										<ul class="list-unstyled filtersList isoFiltersList d-flex flex-wrap justify-content-lg-end text-uppercase fwMedium text-white wow bounceInUp" data-wow-delay="1s">
 											<li class="active">
-												<a href="javascript:void(0);">ALL</a>
+												<a href="javascript:void(0);" data-i18n="filter.all">ALL</a>
 											</li>
 											<li>
 												<a href="javascript:void(0);" data-filter=".reactpro">Python</a>
@@ -502,7 +538,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">bplay Card Game App</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj1">bplay Card Game App</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://www.bplay.org</h4>
 												</div>
 											</div>
@@ -518,7 +554,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">lanature branch Store</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj2">lanature branch Store</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://lanature.ru</h4>
 												</div>
 											</div>
@@ -534,7 +570,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Music favior site</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj3">Music favior site</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://stockmusic.net</h4>
 												</div>
 											</div>
@@ -551,7 +587,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Coconut favior site</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj4">Coconut favior site</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://www.coconutcreative.ca</h4>
 												</div>
 											</div>
@@ -569,7 +605,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Moebelland website</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj5">Moebelland website</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle mb-0">https://www.moebelland.de</h4>
 												</div>
 											</div>
@@ -585,7 +621,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Luther used car template</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj6">Luther used car template</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle mb-0">https://www.lutherusedcarcompany.com/</h4>
 												</div>
 											</div>
@@ -603,7 +639,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Seonerd SaSS Website</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj7">Seonerd SaSS Website</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://seonerd.com</h4>
 												</div>
 											</div>
@@ -620,7 +656,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Aussietaxrefunds</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj8">Aussietaxrefunds</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://www.aussietaxrefunds.com.au/</h4>
 												</div>
 											</div>
@@ -641,7 +677,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Boating Website Design</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj9">Boating Website Design</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://www.discoverboating.com/</h4>
 												</div>
 											</div>
@@ -657,7 +693,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Snowyvillages Site Design</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj10">Snowyvillages Site Design</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://www.snowyvillages.ca/</h4>
 												</div>
 											</div>
@@ -674,7 +710,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Rested Sleep Better App</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj11">Rested Sleep Better App</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://apps.apple.com/us/app/rested-sleep-better/id1469548436</h4>
 												</div>
 											</div>
@@ -690,7 +726,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title">Garden Puzzle Website</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj12">Garden Puzzle Website</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://gardenpuzzle.com</h4>
 												</div>
 											</div>
@@ -706,7 +742,7 @@
 											<!-- mcwcCaption -->
 											<div class="mcwcCaption text-white position-absolute d-flex align-items-center">
 												<div class="mcwccWrap w-100 p-3">
-													<h3 class="text-white text-capitalize fwMedium title"> E-commerce Engine</h3>
+													<h3 class="text-white text-capitalize fwMedium title" data-i18n="portfolio.proj13"> E-commerce Engine</h3>
 													<h4 class="text-white text-capitalize fwMedium subTitle">https://yesplz.ai/</h4>
 												</div>
 											</div>
@@ -869,8 +905,8 @@
 							<header class="text-center mb-7 mb-lg-9 mb-lg-13">
 								<h2 class="text-capitalize">
 									<!-- headingTitle -->
-									<strong class="fwMedium d-inline-block align-top text-white position-relative headingTitle text-capitalize mb-3 wow fadeInLeft">News &amp; Blog</strong>
-									<span class="d-block wow fadeInUp" data-wow-delay="0.7s">My favorite articles</span>
+									<strong class="fwMedium d-inline-block align-top text-white position-relative headingTitle text-capitalize mb-3 wow fadeInLeft" data-i18n="blog.title">News &amp; Blog</strong>
+									<span class="d-block wow fadeInUp" data-wow-delay="0.7s" data-i18n="blog.subtitle">My favorite articles</span>
 								</h2>
 							</header>
 							<div class="wow fadeInDown" data-wow-delay="1.2s">
@@ -885,7 +921,7 @@
 												<div class="w-100 py-4 px-4 py-xl-7 px-xl-8">
 													<time datetime="2011-01-12" class="d-block font-weight-normal timeStamp mb-3">June 25, 2018</time>
 													<h3 class="text-white nwbcHeading font-weight-normal mb-0">
-														<a href="https://hackernoon.com/how-not-to-be-a-mediocre-developer-c59a49f97fc5">
+														<a href="https://hackernoon.com/how-not-to-be-a-mediocre-developer-c59a49f97fc5" data-i18n="blog.article1">
 															How to not be a mediocre developer
 														  </a>
 													</h3>
@@ -902,7 +938,7 @@
 												<div class="w-100 py-4 px-4 py-xl-7 px-xl-8">
 													<time datetime="2011-01-12" class="d-block font-weight-normal timeStamp mb-3">Mar 14, 2018</time>
 													<h3 class="text-white nwbcHeading font-weight-normal mb-0">
-														<a href="https://medium.com/zerotomastery/dont-be-a-junior-developer-608c255b3056">Don’t be a Junior Developer</a>
+														<a href="https://medium.com/zerotomastery/dont-be-a-junior-developer-608c255b3056" data-i18n="blog.article2">Don’t be a Junior Developer</a>
 													</h3>
 												</div>
 											</div>
@@ -917,7 +953,7 @@
 												<div class="w-100 py-4 px-4 py-xl-7 px-xl-8">
 													<time datetime="2011-01-12" class="d-block font-weight-normal timeStamp mb-3">Nov 8, 2017</time>
 													<h3 class="text-white nwbcHeading font-weight-normal mb-0">
-														<a href="https://engineering.videoblocks.com/web-architecture-101-a3224e126947">Web Architecture</a>
+														<a href="https://engineering.videoblocks.com/web-architecture-101-a3224e126947" data-i18n="blog.article3">Web Architecture</a>
 													</h3>
 												</div>
 											</div>
@@ -932,7 +968,7 @@
 												<div class="w-100 py-4 px-4 py-xl-7 px-xl-8">
 													<time datetime="2011-01-12" class="d-block font-weight-normal timeStamp mb-3">APRIL 10, 2018</time>
 													<h3 class="text-white nwbcHeading font-weight-normal mb-0">
-														<a href="javascript:void(0);">How to think like a programmer</a>
+														<a href="javascript:void(0);" data-i18n="blog.article4">How to think like a programmer</a>
 													</h3>
 												</div>
 											</div>
@@ -1008,11 +1044,11 @@
 											<img src="images/logo.png" class="img-fluid" alt="scavvios">
 										</a> -->
 									</div>
-									<strong class="h2 d-block mb-4">Software <span class="text-white">Developer</span></strong>
-									<p>I'm available for work, get in touch!</p>
+									<strong class="h2 d-block mb-4" data-i18n-htm="footer.headingHtml">Software <span class="text-white">Developer</span></strong>
+									<p data-i18n="footer.tagline">I'm available for work, get in touch!</p>
 									<!-- textCopyright -->
 									<div class="textCopyright pt-7 d-none d-md-block">
-										<p><strong class="fwMedium">&copy; <a href="javascript:void(0);">AlbertLipaev</a> 2024 | All Rights Reserved</strong></p>
+										<p><strong class="fwMedium" data-i18n-htm="footer.copyrightHtml">&copy; <a href="javascript:void(0);">AlbertLipaev</a> 2024 | All Rights Reserved</strong></p>
 									</div>
 								</div>
 							</div>
@@ -1075,22 +1111,22 @@
 					<nav class="ftNav">
 						<ul class="list-unstyled d-flex justify-content-center justify-content-md-start flex-wrap font-weight-normal text-uppercase mb-0">
 							<li>
-								<a href="#pageWrapper" class="smooth">Home</a>
+								<a href="#pageWrapper" class="smooth" data-i18n="nav.home">Home</a>
 							</li>
 							<li>
-								<a href="#about" class="smooth">About</a>
+								<a href="#about" class="smooth" data-i18n="nav.about">About</a>
 							</li>
 							<li>
-								<a href="#services" class="smooth">Services</a>
+								<a href="#services" class="smooth" data-i18n="nav.services">Services</a>
 							</li>
 							<li>
-								<a href="#works" class="smooth">Works</a>
+								<a href="#works" class="smooth" data-i18n="nav.work">Works</a>
 							</li>
 							<!-- <li>
 								<a href="#journey" class="smooth">Journey</a>
 							</li> -->
 							<li>
-								<a href="#blog" class="smooth">Blog</a>
+								<a href="#blog" class="smooth" data-i18n="nav.blog">Blog</a>
 							</li>
 							<!-- <li>
 								<a href="#contact" class="smooth">Contact</a>
@@ -1099,11 +1135,11 @@
 					</nav>
 					<!-- textCopyright -->
 					<div class="textCopyright pt-4 d-md-none">
-						<p><strong class="fwMedium">&copy; <a href="javascript:void(0);">AlbertLipaev</a> 2024 | All Rights Reserved</strong></p>
+						<p><strong class="fwMedium" data-i18n-htm="footer.copyrightHtml">&copy; <a href="javascript:void(0);">AlbertLipaev</a> 2024 | All Rights Reserved</strong></p>
 					</div>
 				</div>
 				<!-- btnTop -->
-				<a href="#pageWrapper" class="btnTop smooth fas fa-arrow-up d-none d-md-flex align-items-center justify-content-center bg-warning text-white position-absolute"><span class="sr-only">back to top</span></a>
+				<a href="#pageWrapper" class="btnTop smooth fas fa-arrow-up d-none d-md-flex align-items-center justify-content-center bg-warning text-white position-absolute"><span class="sr-only" data-i18n="aria.backToTop">back to top</span></a>
 				<div id="loader" class="loader-holder">
 					<div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
 				</div>
@@ -1120,5 +1156,7 @@
 	<script src="js/jqueryCustom.js"></script>
 	<!-- include fontAwesome -->
 	<script src="https://kit.fontawesome.com/391f644c42.js"></script>
+	<!-- include i18n (RU/EN switcher) -->
+	<script src="js/i18n.js"></script>
 </body>
 </html>
